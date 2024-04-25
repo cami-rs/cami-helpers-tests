@@ -9,15 +9,15 @@ camigo-helpers = { path = "../camigo-helpers" }
 
 [[test]]
 name = "alloc-tests"
-path = "src/alloc.rs"
+path = "src/alloc_root.rs"
 
 [[test]]
 name = "core-tests"
-path = "src/core.rs"
+path = "src/core_root.rs"
 
 [[test]]
 name = "std-tests"
-path = "src/std.rs"
+path = "src/std_root.rs"
 
 [lints.rust]
 warnings = "allow"
