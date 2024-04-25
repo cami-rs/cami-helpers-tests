@@ -3,4 +3,5 @@
 
 extern crate alloc as rust_alloc;
 
+#[path = "core/core_mod.rs"]
 mod core;
