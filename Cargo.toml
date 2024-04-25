@@ -8,8 +8,16 @@ camigo = { path = "../camigo" }
 camigo-helpers = { path = "../camigo-helpers" }
 
 [[test]]
-name = "module-based-tests"
-path = "src/tests.rs"
+name = "alloc-tests"
+path = "src/alloc.rs"
+
+[[test]]
+name = "core-tests"
+path = "src/core.rs"
+
+[[test]]
+name = "std-tests"
+path = "src/std.rs"
 
 [lints.rust]
 warnings = "allow"

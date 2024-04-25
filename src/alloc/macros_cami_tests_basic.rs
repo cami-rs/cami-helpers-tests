@@ -1,4 +1,5 @@
 use camigo_helpers::{cami_ord, cami_partial_eq, cami_wrap_struct, cami_wrap_tuple, Locality};
+use rust_alloc::{string::String, vec::Vec};
 
 #[test]
 fn main() {}
