@@ -4,8 +4,8 @@ version = "0.0.1"
 edition = "2021"
 
 [dependencies]
-camigo = { path = "../../camigo" }
-camigo-helpers = { path = "../camigo-helpers-crate" }
+camigo = { path = "../camigo" }
+camigo-helpers = { path = "../camigo-helpers" }
 
 [[test]]
 name = "module-based-tests"
