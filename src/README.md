@@ -26,13 +26,6 @@ file the top (root) level of the generated test crate (one of the test crates). 
 We don't want `mod.rs` files (as per [camigo > CONTRIBUTING > Internal
 Conventions](https://github.com/peter-kehl/camigo/blob/main/CONTRIBUTING.md#internal-conventions)).
 
-We can't easily have `core.rs` and `alloc.rs` at the top level (in `/src`). It made it hard for
-`alloc` to "include" (load in) `core`, and for `std` to "include" (load in) both `core` and `alloc`.
-(Despite re-reading [The Rust Reference > Modules > The `path`
-attribute](https://doc.rust-lang.org/nightly/reference/items/modules.html#the-path-attribute) -
-`core` tests compiled well: `cargo check --test core-tests`, but `alloc` and `std` ones did not:
-`cargo check --test alloc-tests`.)
-
 Instead of `core/core_mod.rs` we could have `core/core.rs` (and similar for `alloc` and `std`). But
 then `core` and `core_root` (and similar for `alloc` and `alloc_root`, `std` and `std_root`) would
 be more ambiguous.
