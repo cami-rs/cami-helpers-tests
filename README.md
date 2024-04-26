@@ -2,5 +2,6 @@
 
 ## Why is this not a part of camigo-helpers?
 
-This depends on both `camigo` and `camigo-helpers`. But, since `camigo` depends on `camigo-helpers`,
-if we made these tests a part of `camigo-helpers`, it would fail: "circular dependencies."
+It cannot. This depends on both `camigo` and `camigo-helpers`. But, `camigo` also depends on
+`camigo-helpers`. If we moved these tests to `camigo-helpers` instead, it would fail: "circular
+dependencies."
