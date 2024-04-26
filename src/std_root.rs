@@ -6,3 +6,6 @@ mod core;
 
 #[path = "alloc/alloc_mod.rs"]
 mod alloc;
+
+#[path = "std/std_mod.rs"]
+mod std;
