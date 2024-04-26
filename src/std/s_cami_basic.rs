@@ -13,7 +13,7 @@ struct A /*where A: ::core::hash::Hash*/ {
 
 // @TODO Move this to alloc tests
 cami_wrap_struct! {
-    _CaWrap2 <{ A, B }>
+    _CaWrap2 [A, B]
      where {A: Sized + ::core::fmt::Debug, B: ::core::fmt::Debug
      } {
         t : Vec<(A, B)>

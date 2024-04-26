@@ -11,7 +11,7 @@ struct A {
 }
 
 cami_wrap_struct! {
-    _CaWrap2 <{ A }> {
+    _CaWrap2 [ A ] {
         pub t : Vec<A>
     }
 }
