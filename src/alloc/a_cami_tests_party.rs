@@ -4,16 +4,6 @@ use rust_alloc::{string::String, vec::Vec};
 #[test]
 fn main() {}
 
-struct Empty {}
-cami_partial_eq! {
-    Empty {
-        Locality::Both
-    }
-    []
-    []
-    []
-}
-
 type Amount = u16;
 
 #[derive(PartialEq, Eq, PartialOrd, Ord, Debug, Clone)]
