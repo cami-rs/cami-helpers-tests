@@ -18,7 +18,7 @@ cami_wrap_struct! {
 
 cami_wrap_struct! { CaWrapA1 {t : A }}
 cami_partial_eq! {
-    CaWrapA1 {
+    [CaWrapA1] {
         Locality::Both => t
     }
     [ (|this: &A, other: &A| this.x==other.x) ]
@@ -38,7 +38,7 @@ fn get_v<'a>(wrap: &'a A) -> &'a Vec<i32> {
 }
 cami_partial_eq! {
     <'a> //@TODO remove 'a
-    CaTupleA2 {
+    [CaTupleA2] {
         Locality::Both => 0
     }
     [ {|obj: &A| obj.x}

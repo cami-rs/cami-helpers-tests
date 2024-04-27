@@ -46,7 +46,7 @@ pub struct Table(Food, Food);
 pub struct Room(Table, Table);
 
 cami_partial_eq! {
-    Food {
+    [Food] {
         Locality::Both
     }
     [amount]
@@ -55,7 +55,7 @@ cami_partial_eq! {
 }
 
 cami_partial_eq! {
-    FoodList {
+    [FoodList] {
         Locality::Both
     }
     [
@@ -72,7 +72,7 @@ cami_partial_eq! {
     []
 }
 cami_partial_eq! {
-    Table {
+    [Table] {
         Locality::Both
     }
     [
@@ -85,7 +85,7 @@ cami_partial_eq! {
     []
 }
 cami_partial_eq! {
-    Room {
+    [Room] {
         Locality::Both
     }
     [
