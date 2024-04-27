@@ -37,7 +37,7 @@ fn get_v<'a>(wrap: &'a A) -> &'a Vec<i32> {
     &wrap.v
 }
 cami_partial_eq! {
-    <'a> //@TODO remove 'a
+    ('a) //@TODO remove 'a
     [CaTupleA2] {
         Locality::Both => 0
     }

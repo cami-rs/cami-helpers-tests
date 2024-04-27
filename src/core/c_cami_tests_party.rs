@@ -20,7 +20,7 @@ pub struct SimpleGeneric<T> {
 }
 /* */
 cami_partial_eq! {
-    <T>
+    (T)
     [SimpleGeneric <T>]
     {
         Locality::PureLocal
