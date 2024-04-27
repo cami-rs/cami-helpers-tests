@@ -30,7 +30,13 @@ cami_ord! {
     [v]
 }
 
-cami_wrap_tuple! { _CaTupleGen1 <T> (pub T) where T: Clone}
+cami_wrap_tuple! {
+     _CaTupleGen1 [T]
+      (pub T)
+      where {
+        T: Clone
+      }
+}
 
 cami_wrap_tuple! { CaTupleA2 (A) }
 fn get_v<'a>(wrap: &'a A) -> &'a Vec<i32> {
