@@ -22,7 +22,7 @@ pub struct SimpleGeneric<T> {
 cami_partial_eq! {
     (T)
     [SimpleGeneric <T>]
-    where [T: PartialEq + Sized]
+    where {T: PartialEq + Sized}
     {
         Locality::PureLocal
     }
