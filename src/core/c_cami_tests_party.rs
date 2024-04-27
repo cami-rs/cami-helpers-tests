@@ -4,16 +4,16 @@ use camigo_helpers::{cami_partial_eq, Locality};
 fn main() {}
 
 struct Empty {}
-/*
+
 cami_partial_eq! {
-    Empty {
+    [Empty] {
         Locality::Both
     }
     []
     []
     []
 }
-*/
+
 #[derive(PartialEq, Eq, Debug, Clone)]
 pub struct SimpleGeneric<T> {
     t: T,
@@ -22,10 +22,10 @@ pub struct SimpleGeneric<T> {
 cami_partial_eq! {
     (T)
     [SimpleGeneric <T>]
+    where [T: PartialEq + Sized]
     {
         Locality::PureLocal
     }
-    where T: PartialEq
     [t]
     []
     []
