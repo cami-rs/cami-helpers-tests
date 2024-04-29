@@ -1,5 +1,5 @@
 use ::std::{collections::HashSet, string::String, vec::Vec};
-use camigo_helpers::{cami_ord, cami_partial_eq, cami_wrap_struct, cami_wrap_tuple, Locality};
+use camigo_helpers::{cami_ord, cami_partial_eq, cami_impl, Locality};
 
 #[test]
 fn main() {}
@@ -12,12 +12,12 @@ struct A /*where A: ::core::hash::Hash*/ {
 }
 
 // @TODO Move this to alloc tests
-cami_wrap_struct! {
+cami_impl! {
     _CaWrap2 [A, B]
-     where {A: Sized + ::core::fmt::Debug, B: ::core::fmt::Debug
-     } {
-        t : Vec<(A, B)>
-    }
+     (
+         Vec<(A, B)>
+     )
+     where {A: Sized + ::core::fmt::Debug, B: ::core::fmt::Debug}
 }
 
 macro_rules! plus {

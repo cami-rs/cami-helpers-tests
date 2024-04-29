@@ -1,4 +1,4 @@
-use camigo_helpers::{cami_ord, cami_partial_eq, cami_wrap_struct, cami_wrap_tuple, Locality};
+use camigo_helpers::{cami_ord, cami_partial_eq, cami_impl, Locality};
 use rust_alloc::{string::String, vec::Vec};
 
 #[test]
@@ -10,27 +10,27 @@ struct A {
     v: Vec<i32>,
 }
 
-cami_wrap_struct! {
-    _CaWrap2 [ A ] {
-        pub t : Vec<A>
-    }
+cami_impl! {
+    _CaWrap2 [ A ] (
+        pub Vec<A>
+    )
 }
 
-cami_wrap_struct! { CaWrapA1 {t : A }}
+cami_impl! { CaWrapA1 (A )}
 cami_partial_eq! {
     [CaWrapA1] {
-        Locality::Both => t
+        Locality::Both => 0
     }
     [ (|this: &A, other: &A| this.x==other.x) ]
     [.v]
 }
 cami_ord! {
-    CaWrapA1 { t }
+    CaWrapA1 { 0 }
     [ {|a: &A| a.x} ]
     [v]
 }
 
-cami_wrap_tuple! {
+cami_impl! {
      _CaTupleGen1 [T]
       (pub T)
       where {
@@ -38,7 +38,7 @@ cami_wrap_tuple! {
       }
 }
 
-cami_wrap_tuple! { CaTupleA2 (A) }
+cami_impl! { CaTupleA2 (A) }
 fn get_v<'a>(wrap: &'a A) -> &'a Vec<i32> {
     &wrap.v
 }
