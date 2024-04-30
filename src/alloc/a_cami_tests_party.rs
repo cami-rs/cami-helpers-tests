@@ -60,7 +60,7 @@ cami_partial_eq! {
         common.amount,
         gluten_free.amount,
         .dairy_free.amount(),
-        {|food_list: &FoodList| food_list.vegan.amount}
+        {|food_list| food_list.vegan.amount}
     ]
     [   common.name,
         gluten_free.name(),
@@ -82,9 +82,7 @@ cami_partial_eq! {
 cami_partial_eq! {
     {Room}
     (Locality::Both)
-    [
-    ]
-    [
-    ]
+    []
+    []
     [.0, .1]
 }
