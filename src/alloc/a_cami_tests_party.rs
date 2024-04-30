@@ -46,18 +46,16 @@ pub struct Table(Food, Food);
 pub struct Room(Table, Table);
 
 cami_partial_eq! {
-    [Food] {
-        Locality::Both
-    }
+    {Food}
+    (Locality::Both)
     [amount]
     [] //[ (|this: &Food, other: &Food| this.name==other.name) ]
     [name]
 }
 
 cami_partial_eq! {
-    [FoodList] {
-        Locality::Both
-    }
+    {FoodList}
+    (Locality::Both)
     [
         .common.amount,
         {|food_list: &FoodList| food_list.gluten_free.amount},
@@ -72,9 +70,8 @@ cami_partial_eq! {
     []
 }
 cami_partial_eq! {
-    [Table] {
-        Locality::Both
-    }
+    {Table}
+    (Locality::Both)
     [
         .0.amount,
         {|table: &Table| table.1.amount}
@@ -85,9 +82,8 @@ cami_partial_eq! {
     []
 }
 cami_partial_eq! {
-    [Room] {
-        Locality::Both
-    }
+    {Room}
+    (Locality::Both)
     [
         .0.0.amount,
         {|room: &Room| room.0.1.amount},

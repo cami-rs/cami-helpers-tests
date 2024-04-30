@@ -6,9 +6,8 @@ fn main() {}
 struct Empty {}
 
 cami_partial_eq! {
-    [Empty] {
-        Locality::Both
-    }
+    {Empty}
+    (Locality::Both)
     []
     []
     []
@@ -20,12 +19,10 @@ pub struct SimpleGeneric<T> {
 }
 /* */
 cami_partial_eq! {
-    (T)
-    [SimpleGeneric <T>]
+    <[T]>
+    {SimpleGeneric <T>}
     where {T: PartialEq + Sized}
-    {
-        Locality::PureLocal
-    }
+    (Locality::PureLocal)
     [t]
     []
     []

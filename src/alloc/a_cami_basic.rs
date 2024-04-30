@@ -15,11 +15,10 @@ struct _CaWrap2(pub Vec<A>);
 #[derive(PartialEq, Eq, PartialOrd, Ord)]
 struct CaWrapA1(A);
 cami_partial_eq! {
-    [CaWrapA1] {
-        Locality::Both => 0
-    }
-    [ (|this: &A, other: &A| this.x==other.x) ]
-    [.v]
+    {CaWrapA1}
+    (Locality::Both)
+    [ /*(|this: &A, other: &A| this.x==other.x)*/ ]
+    [/* .v*/]
 }
 cami_ord! {
     CaWrapA1 { 0 }
@@ -37,18 +36,11 @@ fn get_v<'a>(wrap: &'a A) -> &'a Vec<i32> {
     &wrap.v
 }
 cami_partial_eq! {
-    ('a) //@TODO remove 'a
-    [CaTupleA2] {
-        Locality::Both => 0
-    }
-    [ {|obj: &A| obj.x}
+    {CaTupleA2}
+    (Locality::Both)
+    [ /*{|obj: &_| obj.x*}*/
     ]
-    // @TODO: We can't specify return lifetimes here:
-    //
-    // [{ |obj: &'l A| -> &'l Vec<i32> {&obj.v} }]
-    //
-    // Hence a separate function:
-    [ {get_v} ]
+    [ /*{get_v}*/ ]
     []
 }
 cami_ord! {
