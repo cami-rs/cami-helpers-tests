@@ -49,7 +49,7 @@ cami_partial_eq! {
     {Food}
     (Locality::Both)
     [amount]
-    [] //[ (|this: &Food, other: &Food| this.name==other.name) ]
+    []
     [name]
 }
 
@@ -57,15 +57,15 @@ cami_partial_eq! {
     {FoodList}
     (Locality::Both)
     [
-        .common.amount,
-        {|food_list: &FoodList| food_list.gluten_free.amount},
+        common.amount,
+        gluten_free.amount,
         .dairy_free.amount(),
-        (|this: &FoodList, other: &FoodList| this.vegan.amount==other.vegan.amount)
+        {|food_list: &FoodList| food_list.vegan.amount}
     ]
     [   common.name,
         gluten_free.name(),
         dairy_free().name,
-        (|this: &FoodList, other: &FoodList| this.vegan.name==other.vegan.name)
+        (|this| &this.vegan.name)
     ]
     []
 }
@@ -74,25 +74,17 @@ cami_partial_eq! {
     (Locality::Both)
     [
         .0.amount,
-        {|table: &Table| table.1.amount}
     ]
     [   .0.name(),
-        (|this: &Table, other: &Table| this.1.name==other.1.name)
     ]
-    []
+    [.1]
 }
 cami_partial_eq! {
     {Room}
     (Locality::Both)
     [
-        .0.0.amount,
-        {|room: &Room| room.0.1.amount},
-        (|this: &Room, other: &Room| this.1.0.amount==other.1.0.amount),
-        (|this: &Room, other: &Room| this.1.0.eq_local(&other.1.0))
     ]
-    [   .0.0.name,
-
-        (|this: &Room, other: &Room| this.0.1.name==other.0.1.name)
+    [
     ]
-    []
+    [.0, .1]
 }
