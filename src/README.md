@@ -23,8 +23,8 @@ file the top (root) level of the generated test crate (one of the test crates). 
 
 ## Why */*_mod.rs
 
-We don't want `mod.rs` files (as per [camigo > CONTRIBUTING > Internal
-Conventions](https://github.com/peter-kehl/camigo/blob/main/CONTRIBUTING.md#internal-conventions)).
+We don't want `mod.rs` files (as per [cami > CONTRIBUTING > Internal
+Conventions](https://github.com/peter-kehl/cami/blob/main/CONTRIBUTING.md#internal-conventions)).
 
 Instead of `core/core_mod.rs` we could have `core/core.rs` (and similar for `alloc` and `std`). But
 then `core` and `core_root` (and similar for `alloc` and `alloc_root`, `std` and `std_root`) would

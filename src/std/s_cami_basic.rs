@@ -1,5 +1,5 @@
 use ::std::{collections::HashSet, string::String, vec::Vec};
-use camigo_helpers::{cami_ord, cami_partial_eq, Locality};
+use cami_helpers::{cami_ord, cami_partial_eq, Locality};
 
 #[test]
 fn main() {}

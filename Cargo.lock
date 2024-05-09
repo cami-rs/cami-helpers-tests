@@ -3,20 +3,20 @@
 version = 3
 
 [[package]]
-name = "camigo"
+name = "cami"
 version = "0.0.1"
 dependencies = [
- "camigo-helpers",
+ "cami-helpers",
 ]
 
 [[package]]
-name = "camigo-helpers"
+name = "cami-helpers"
 version = "0.0.1"
 
 [[package]]
-name = "camigo-helpers-tests"
+name = "cami-helpers-tests"
 version = "0.0.1"
 dependencies = [
- "camigo",
- "camigo-helpers",
+ "cami",
+ "cami-helpers",
 ]

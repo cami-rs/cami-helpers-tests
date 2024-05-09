@@ -1,4 +1,4 @@
-//! Testing `no_std`-compatible alloc-based code of [camigo_helpers].
+//! Testing `no_std`-compatible alloc-based code of [cami_helpers].
 #![no_std]
 
 extern crate alloc as rust_alloc;

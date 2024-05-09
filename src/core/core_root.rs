@@ -1,4 +1,4 @@
-//! Testing `no_std` & no-alloc-compatible code of [camigo_helpers].
+//! Testing `no_std` & no-alloc-compatible code of [cami_helpers].
 #![no_std]
 
 #[path = "core_mod.rs"]

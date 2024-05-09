@@ -1,4 +1,4 @@
-use camigo_helpers::{cami_partial_eq, Locality};
+use cami_helpers::{cami_partial_eq, Locality};
 
 #[test]
 fn main() {}
@@ -30,7 +30,7 @@ cami_partial_eq! {
 /* */
 
 /*
-impl < T> camigo :: CamiPartialEq for SimpleGeneric < T>
+impl < T> cami :: CamiPartialEq for SimpleGeneric < T>
 where T: PartialEq
 {
     const LOCALITY : Locality = Locality::PureLocal; fn
@@ -38,11 +38,11 @@ where T: PartialEq
     {
         Self :: LOCALITY.debug_reachable_for_local(); let this = self; true &&
         {
-            let getter = ::camigo_helpers::always_equal_ref; getter(this) ==
+            let getter = ::cami_helpers::always_equal_ref; getter(this) ==
             getter(other)
         } && this.t == other.t &&
         {
-            let getter = ::camigo_helpers::always_equal_ref;
+            let getter = ::cami_helpers::always_equal_ref;
             getter(this).eq_local(getter(other))
         }
     } fn eq_non_local(& self, other : & Self) -> bool
@@ -50,11 +50,11 @@ where T: PartialEq
         Self :: LOCALITY.debug_reachable_for_non_local(); let this = self;
         true &&
         {
-            let getter = ::camigo_helpers::always_equal_ref; getter(this) ==
+            let getter = ::cami_helpers::always_equal_ref; getter(this) ==
             getter(other)
         } &&
         {
-            let getter = ::camigo_helpers::always_equal_ref;
+            let getter = ::cami_helpers::always_equal_ref;
             getter(this).eq_non_local(getter(other))
         }
     }

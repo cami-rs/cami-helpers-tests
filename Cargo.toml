@@ -1,11 +1,11 @@
 [package]
-name = "camigo-helpers-tests"
+name = "cami-helpers-tests"
 version = "0.0.1"
 edition = "2018"
 
 [dependencies]
-camigo = { path = "../camigo" }
-camigo-helpers = { path = "../camigo-helpers" }
+cami = { path = "../cami" }
+cami-helpers = { path = "../cami-helpers" }
 
 [[test]]
 name = "alloc-tests"
@@ -19,5 +19,5 @@ path = "src/core/core_root.rs"
 name = "std-tests"
 path = "src/std/std_root.rs"
 
-[lints.rust]
-warnings = "allow"
+#[lints.rust]
+#warnings = "allow"

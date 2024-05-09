@@ -1,4 +1,4 @@
-use camigo_helpers::{cami_partial_eq, Locality};
+use cami_helpers::{cami_partial_eq, Locality};
 use rust_alloc::{string::String, vec::Vec};
 
 #[test]
